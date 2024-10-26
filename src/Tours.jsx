@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import Tour from './Tour';
 
 
-export default function Tours (props) {
-    const {tours, removeTour} = props
+
+
+export default function Tours ({tours}) {
+    
     return (
-        <div>
-            {tours.map((tour) => {
-               return <Tour key={tour.id} {...tour} removeTour={removeTour}/>
-            })}
+        <div className="tours">
+           {tours.map((tour) => {
+        
+            return (
+                <Tour key={tour.id} {...tour}/>
+            )
+           })}
         </div>
     )
 }
